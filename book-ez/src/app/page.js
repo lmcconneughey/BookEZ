@@ -24,7 +24,7 @@ export default function Home() {
         <div>
           <Link
           className="bg-stone-500 text-white rounded-md p-2"
-          href=""
+          href="/store"
           >Take me the store</Link>
         </div>
       </div>
