@@ -1,9 +1,14 @@
+import {getAllBooks} from "../lib/fake-data";
+import BookList from "../ui/books/BookList.js";
+
+const BookListPage =  () => {
+const books = getAllBooks()
+//console.log(books);
 
 
-const BookListPage = async () => {
-
-
-    return(<div>Book List Page</div>)
-
+    return(
+        <BookList books={books}/>
+    )
 }
+
 export default BookListPage
