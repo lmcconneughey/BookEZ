@@ -1,6 +1,9 @@
 'use client'
 
 import Link from "next/link";
+import { useContext } from "react";
+import { StoreContext } from "@/app/context";
+
 
 import { 
     BookOpenIcon, 
@@ -27,6 +30,7 @@ const links = [
 ]
 
 const NavLinks = () => {
+    const {cartData} = useContext(StoreContext)
     return(
     <div>
         {
@@ -37,8 +41,10 @@ const NavLinks = () => {
             key={link.name}
             href={link.href}
             className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-500 p-3 text-sm font-medium hover:bg-sky-100 hover:text-purple-600 md:flex-none md:justify-start md:p-2 md:px-3"
-            > {/*needs re style */}
+            > 
             <IconComponent className="w-6" />{/** dor every icon in our array, a component is rendered */}
+            {(link.name === 'Cart' && cartData && cartData.length > 0) 
+             ? `${link.name}(${cartData.length})` : <p className="hidden md:block">{link.name}</p>}
             </Link>
             
         )

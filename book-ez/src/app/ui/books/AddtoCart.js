@@ -1,21 +1,25 @@
 'use client'
 
+import { useContext } from "react";
+import { StoreContext } from "@/app/context";
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 import {toast} from "react-toastify";
 
 
 const AddtoCart = ({book}) => {
+    const {cartData, setCartData} = useContext(StoreContext);
     const handleCart = (e, reason) => {
         e.preventDefault()
-        //console.log(book);
+        console.log(book);
         const newData = {...book, type: reason};
-       
-
-   toast.success(`Added ${newData.title} to cart!`, {//<<documentation @ https://www.npmjs.com/package/react-toastify
-        autoClose: 1000,
-        position:"top-right",
-        //transition: Bounce
-    })
+        setCartData([...cartData, newData])
+        console.log(cartData);
+        
+        toast.success(`Added ${newData.title} to cart!`, {//<<documentation @ https://www.npmjs.com/package/react-toastify
+                autoClose: 1000,
+                position:"top-right",
+                //transition: Bounce
+        })
         
     }
 
