@@ -33,7 +33,6 @@ const BookDetailsPage = ({params}) => {
                     </ul>
                 </div>
             </div>
-
         </div>
     )
 }

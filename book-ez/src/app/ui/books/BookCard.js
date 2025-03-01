@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import AddtoCart from "./AddtoCart"
 // linked book by its ID 
 const BookCard = ({book}) => {
     return (
@@ -19,7 +20,8 @@ const BookCard = ({book}) => {
                 <p>{book.author}</p>
                 <p>Rent for ${book.rentPrice}</p>
                 <p>Buy for ${book.sellPrice}</p>
-               
+               {/**add conditional render for if book is rented and a count for how many books are rented */}
+               <AddtoCart book={book} />
             </div>
         </Link>
     )
