@@ -1,7 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-// important info on link card to a specif page, in this usecase, we're linking to
-// book details page.
+// linked book by its ID 
 const BookCard = ({book}) => {
     return (
         <Link href={`/store/${book.id}`} >
