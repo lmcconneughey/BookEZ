@@ -7,7 +7,11 @@ const books = await getAllBooks()
 
 
     return(
-        <BookList books={books}/>
+        <div className="">
+            <BookList books={books}/>
+        </div>
+        
+        
     )
 }
 
