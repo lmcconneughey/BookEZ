@@ -16,15 +16,13 @@ const CartItems = () => {
         const filteredItem = cartData.filter((item) => {
             return item.id !== id;
         });
-        //console.log(filteredItem); works!
-        
+        //console.log(filteredItem); works!       
         setCartData([...filteredItem]);
         
         toast.success(`${title} has been removed from the Cart successfully!`, {
             position: "top-right",
             autoClose: 1000,
-        });
-        
+        });       
     }
   
     return(
@@ -54,7 +52,7 @@ const CartItems = () => {
               </div>
               <a 
                 className="ml-3 mt-1 cursor-pointer"
-                onClick = {(event, id, name) => removeItem(event, item.id, item.title)}>
+                onClick = {(event) => removeItem(event, item.id, item.title)}>
                 <TrashIcon className="w-6"/>
               </a>
             </li>

@@ -10,15 +10,14 @@ const AddtoCart = ({book}) => {
     const {cartData, setCartData} = useContext(StoreContext);
     const handleCart = (e, reason) => {
         e.preventDefault()
-        console.log(book);
+        //console.log(book);
         const newData = {...book, type: reason};
         setCartData([...cartData, newData])
-        console.log(cartData);
+        //console.log(cartData);
         
         toast.success(`Added ${newData.title} to cart!`, {//<<documentation @ https://www.npmjs.com/package/react-toastify
-                autoClose: 1000,
-                position:"top-right",
-                //transition: Bounce
+            autoClose: 1000,
+            position:"top-right",
         })
         
     }

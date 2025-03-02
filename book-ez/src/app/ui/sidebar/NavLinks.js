@@ -44,8 +44,7 @@ const NavLinks = () => {
             >
             <IconComponent className="w-6" />{/** for every icon in our array, a component is rendered */}
             {(link.name === 'Cart' && cartData && cartData.length > 0) 
-             ? `(${cartData.length}) in ` : <p className="hidden md:block">{link.name}</p>}
-              {link.name}
+             ? `(${cartData.length})` : <p className="hidden md:block">{link.name}</p>}             
             </Link>
             
         )
