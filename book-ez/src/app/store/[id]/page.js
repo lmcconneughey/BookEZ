@@ -1,11 +1,12 @@
-'use client'
+
 import * as React from 'react'
-import { getBookById } from '../../lib/fake-data'
+import { getBookById } from '@/db/queries'
 import Image from "next/image"
 
-const BookDetailsPage = ({params}) => {
-    const { id } = React.use(params)
-    const book = getBookById(id)
+const BookDetailsPage = async ({params: {id}}) => {
+    //const { id } = await React.use(params)
+    const book = await getBookById(id)
+    console.log(book);
     
     return(
         <div className=" grid place-content-center gap-1 max-w-md overflow-hidden bg-white rounded-lg shadow-lg">

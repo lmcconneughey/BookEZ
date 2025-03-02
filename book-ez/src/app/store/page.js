@@ -1,9 +1,9 @@
-import {getAllBooks} from "../lib/fake-data";
+import { getAllBooks } from "@/db/queries/index.js";
 import BookList from "../ui/books/BookList.js";
 
-const BookListPage =  () => {
-const books = getAllBooks()
-//console.log(books);
+const BookListPage = async () => {
+const books = await getAllBooks()
+//console.log(books); works!
 
 
     return(
