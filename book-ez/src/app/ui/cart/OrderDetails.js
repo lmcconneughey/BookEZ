@@ -1,7 +1,7 @@
 'use client'
 
 import { useContext } from "react"
-import { StoreContext } from "@/app/context"
+import { StoreContext } from "../../context/index"
 
 
 const OrderDetails = () => {

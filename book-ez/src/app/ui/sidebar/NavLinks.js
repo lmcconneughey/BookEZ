@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useContext } from "react";
-import { StoreContext } from "@/app/context";
+import { StoreContext } from "../../context";
 
 import { 
     BookOpenIcon, 
@@ -17,7 +17,7 @@ import {
     } from "@heroicons/react/24/solid"
 
 const links = [
-    {name: 'Home', href: '/', icon: HomeIcon},
+    {name: 'Home', href: '/store/home', icon: HomeIcon},
     {name: 'Books', href: '/store', icon: BookOpenIcon},
     {name: 'Sell or Lend', href: '/store/sell-lend', icon: RectangleStackIcon},
     {name: 'Cart', href: '/store/cart', icon: ShoppingCartIcon},
@@ -25,7 +25,7 @@ const links = [
     {name: 'Community', href: '/store/community', icon: UserGroupIcon},
     {name: 'Settings', href: '/store/settings', icon: CogIcon},
     {name: 'About', href: '/store/about', icon: Squares2X2Icon},
-    {name: 'Log In', href: '/store/Admin', icon: ArrowLeftEndOnRectangleIcon},
+    {name: 'Log In', href: '/store/login', icon: ArrowLeftEndOnRectangleIcon},
 ]
 
 const NavLinks = () => {

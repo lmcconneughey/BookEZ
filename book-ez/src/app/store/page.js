@@ -1,4 +1,4 @@
-import { getAllBooks } from "@/db/queries/index.js";
+import { getAllBooks } from "../../db/queries";
 import BookList from "../ui/books/BookList.js";
 
 const BookListPage = async () => {

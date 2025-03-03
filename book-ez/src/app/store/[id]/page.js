@@ -1,6 +1,6 @@
 
 import * as React from 'react'
-import { getBookById } from '@/db/queries'
+import { getBookById } from '../../../db/queries'
 import Image from "next/image"
 
 const BookDetailsPage = async ({params: {id}}) => {

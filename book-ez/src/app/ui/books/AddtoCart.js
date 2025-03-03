@@ -1,7 +1,7 @@
 'use client'
 
 import { useContext } from "react";
-import { StoreContext } from "@/app/context";
+import { StoreContext } from "../../context";
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 import {toast} from "react-toastify";
 

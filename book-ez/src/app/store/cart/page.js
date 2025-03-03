@@ -1,6 +1,6 @@
-import OrderDetails from "@/app/ui/cart/OrderDetails";
-import Payment from "@/app/ui/cart/Payment";
-import CartItems from "@/app/ui/cart/CartItems";
+import OrderDetails from "../../ui/cart/OrderDetails";
+import Payment from "../../ui/cart/Payment";
+import CartItems from "../../ui/cart/CartItems";
 
 
 const CartPage = () => {

@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import {ToastContainer} from "react-toastify"
-import dbConnect from "@/services/mongo";
+import dbConnect from "../services/mongo";
 
 export const metadata = {
   title: "Create Next App",

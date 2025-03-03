@@ -2,7 +2,7 @@
 
 import { toast } from 'react-toastify';
 import { useContext } from "react"
-import { StoreContext } from "@/app/context"
+import { StoreContext } from "../../context/index"
 import { TrashIcon } from "@heroicons/react/24/solid";
 import Image from "next/image"
 

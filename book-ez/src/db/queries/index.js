@@ -1,5 +1,5 @@
-import {bookModel} from "@/models/book-model";
-import { replaceMongoIdInArray } from "@/utils/data-util";
+import {bookModel} from "../../models/book-model";
+import { replaceMongoIdInArray, replaceMongoIdInObject } from "../../utils/data-util";
 
 async function getAllBooks() {
 
@@ -9,7 +9,7 @@ async function getAllBooks() {
 
 async function getBookById(id) {
    const book = await bookModel.findById(id).lean();
-   return book
+   return replaceMongoIdInObject(book)
 }
 
 export {
