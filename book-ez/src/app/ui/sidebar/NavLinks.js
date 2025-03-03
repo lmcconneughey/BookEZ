@@ -4,11 +4,10 @@ import Link from "next/link";
 import { useContext } from "react";
 import { StoreContext } from "@/app/context";
 
-
 import { 
     BookOpenIcon, 
     CogIcon, 
-    CubeTransparentIcon,
+    ArrowLeftEndOnRectangleIcon,
     HomeIcon, 
     RectangleStackIcon, 
     Squares2X2Icon, 
@@ -26,7 +25,7 @@ const links = [
     {name: 'Community', href: '/store/community', icon: UserGroupIcon},
     {name: 'Settings', href: '/store/settings', icon: CogIcon},
     {name: 'About', href: '/store/about', icon: Squares2X2Icon},
-    {name: 'Admin', href: '/store/Admin', icon: CubeTransparentIcon},
+    {name: 'Log In', href: '/store/Admin', icon: ArrowLeftEndOnRectangleIcon},
 ]
 
 const NavLinks = () => {
@@ -40,7 +39,7 @@ const NavLinks = () => {
             <Link
             key={link.name}
             href={link.href}
-            className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-500 p-3 text-sm font-medium hover:bg-sky-100 hover:text-purple-600 md:flex-none md:justify-start md:p-2 md:px-3"
+            className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-500 p-3 text-sm font-medium hover:bg-sky-100 hover:text-gray-600 md:flex-none md:justify-start md:p-2 md:px-3"
             >
             <IconComponent className="w-6" />{/** for every icon in our array, a component is rendered */}
             {(link.name === 'Cart' && cartData && cartData.length > 0) 
