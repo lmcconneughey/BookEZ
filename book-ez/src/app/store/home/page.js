@@ -16,7 +16,7 @@ const HomePage = async () => {
                 User Home Page
             </div>
             <div className="flax flex-col items-center m-4">
-                <h1>{session?.user?.name}</h1>
+                <h1>Welcome back {session?.user?.name}.</h1>
                 <Image 
                     src={session?.user?.image}
                     alt={session?.user?.name} 
@@ -24,6 +24,7 @@ const HomePage = async () => {
                     height={72}
                     className="rounded-full"
                 />
+                <h1>{session?.user?.email}</h1>
             </div>
             <div>
                 <Logout />
