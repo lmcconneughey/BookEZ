@@ -3,14 +3,17 @@ import mongoose, {Schema} from "mongoose";
 const userSchema = new Schema({
     name: {
         required: true,
-        type: stringify,
+        type: String
     },
     password: {
         required: true,
-        type: stringify,
+        type: String
     },
     email: {
         required: true,
-        type: stringify,
+        type: String
     },
 })
+
+export const User = mongoose.models.users || mongoose.model("users", userSchema) // assign the model only if it's not assigned already
+//export const User = mongoose.model("users", userSchema) 
