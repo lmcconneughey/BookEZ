@@ -1,9 +1,39 @@
+'use client'
+
 import { doSocialLogin } from "../../actions/index"
 import SocialLogin from "../social-login/SocialLogin"
+import { doCredentialLogin } from "../../actions/index"
+import { useRouter } from "next/navigation"
+import { useState } from "react"
+
 const LoginForm = () => {
+    const router = useRouter()
+    const [error, setError] = useState("")
+
+    async function handleFormSubmit(event) {
+        event.preventDefault()
+
+        try {
+            const formData = new FormData(event.currentTarget);
+
+            const response = await doCredentialLogin(formData)
+            console.log(response);
+            
+            if(!response) {
+                setError(response.error.message)
+            } else {
+                router.push('/store/home')
+            }
+
+        } catch (error) {
+            console.error(error)
+            setError("please check credentials")
+        }
+    }
     return (
         <div>
-            <form>
+            <div className="text-el text-red-500" >{error}</div>
+            <form onSubmit={handleFormSubmit} >
                 <div>
                     <label htmlFor="email">Email Address</label>
                     <input 
