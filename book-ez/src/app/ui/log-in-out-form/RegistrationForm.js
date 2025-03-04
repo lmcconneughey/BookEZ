@@ -14,7 +14,7 @@ const RegistrationForm = () => {
             const email = forData.get('email')
             const password = forData.get('password')
             //console.log(email);
-            const response = await fetch("../../api/register", {
+            const response = await fetch("../../api/register", {//<<must have this file structure to get the response
                 method: 'POST',
                 headers: {
                     "content-type": "application/json",

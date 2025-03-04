@@ -10,8 +10,7 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const connect = await dbConnect()
-  //console.log(connect);
-  
+  //console.log(connect); 
   return (
     <html lang="en">
       <body>
