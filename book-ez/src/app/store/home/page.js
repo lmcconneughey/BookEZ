@@ -9,7 +9,7 @@ const HomePage = async () => {
     const session = await auth()
 
     if(!session?.user) redirect("/store")//<< 
-    console.log(session)
+    //console.log(session)
     return(
         <div>
             <div>

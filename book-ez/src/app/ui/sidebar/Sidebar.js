@@ -3,7 +3,9 @@ import Link from "next/link"
 import { useState } from "react"
 import NavLinks from "./NavLinks"
 import Logo from "../sidebar/Logo"
+import Image from "next/image"
 import { doLogout } from "../../actions/index"
+import SideBarUserInfo from "./SideBarUserInfo"
 import {ArrowLeftEndOnRectangleIcon, ArrowRightStartOnRectangleIcon} from '@heroicons/react/24/solid'
 
 const Sidebar = () => {
@@ -15,26 +17,29 @@ const Sidebar = () => {
         setIsHovered(false);
     };
     const showLogin = isHover
-    
-    
+     
     return(
-        <div className="flex h-full flex-col px-3 py-4 md:px-2">
+        <div className="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l bg-white-900 dark:border-gray-700">
             <Link 
                 href="/"
-                className="mb-2 flex h-20 items-end justify-start rounded-md bg-gray-500 p-4 md:h-30"
+                className="w-auto h-6 sm:h-7"
             >
-                <div className="w-20 md:w-20 bg-slate-300 rounded-md">
+                <div className="flex items-center mt-2 mb-1.5 px-4 py-3 text-gray-600 bg-gray-200 rounded-lg">
                     <Logo />
                 </div>
-            </Link>{/**<< we'll have a static logo/link back to our store */}
-            <div className="flex flex-wrap gap-2 justify-center md:grow flex-row md:justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
-                <NavLinks />
-                <form action={doLogout}>
-                    <button type="submit" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}  className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-500 p-3 text-sm font-medium hover:bg-sky-100 hover:text-gray-500 md:flex-none md:justify-start md:px-3">
-                    <ArrowRightStartOnRectangleIcon className="w-6" />
-                    {showLogin && "Log Out"}
-                    </button>
-                </form>
+            </Link>
+            <SideBarUserInfo />
+            <div className="flex flex-col justify-between flex-1 mt-6">
+                <div >
+                     <NavLinks />   
+                    <form action={doLogout}>
+                        <button type="submit" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}  className="flex items-center px-4 py-2 mt-5 text-gray-400 bg-gray-200 rounded-lg">
+                        <ArrowRightStartOnRectangleIcon className="w-6" />
+                        <span className="mx-4 font-medium text-gray-400">{showLogin && "Log Out"}</span>
+                        </button>
+                    </form> 
+                </div>
+                
             </div>
         </div>
     )

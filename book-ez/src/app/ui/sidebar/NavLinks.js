@@ -31,7 +31,7 @@ const links = [
 const NavLinks = () => {
     const {cartData} = useContext(StoreContext)
     return(
-    <div>
+    <div className="flex flex-col justify-between flex-1 mt-6" >
         {
     links.map((link) => {
         const IconComponent = link.icon
@@ -39,11 +39,12 @@ const NavLinks = () => {
             <Link
             key={link.name}
             href={link.href}
-            className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-500 p-3 text-sm font-medium hover:bg-sky-100 hover:text-gray-600 md:flex-none md:justify-start md:p-2 md:px-3"
+            className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 bg-gray-200"
             >
             <IconComponent className="w-6" />{/** for every icon in our array, a component is rendered */}
-            {(link.name === 'Cart' && cartData && cartData.length > 0) 
-             ? `(${cartData.length})` : <p className="hidden md:block">{link.name}</p>}             
+            <span className="mx-4 font-medium">{(link.name === 'Cart' && cartData && cartData.length > 0) 
+             ? `(${cartData.length})` : <p className="hidden md:block">{link.name}</p>}  </span>
+                       
             </Link>
             
         )

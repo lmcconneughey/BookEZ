@@ -14,7 +14,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="bg-gray-800">
+        <div className="">
         {children}
         <ToastContainer />
         </div>
