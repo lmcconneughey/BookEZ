@@ -1,9 +1,8 @@
+import avImage from "../../../../public/home/146206666.png"
 import Image from "next/image"
 
-const SidebarUserInfo =  () => {
 
-    
-
+const SidebarUserInfo = () => { 
     // move the image inside the bourder
     return(
         <div className="flex flex-col items-center border-20 mt-6 ">
@@ -11,7 +10,7 @@ const SidebarUserInfo =  () => {
                 <Image 
                     className=" object-cover w-24 h-24 rounded-full" 
                     height={200} width={200} 
-                    src="" 
+                    src={avImage}
                     alt="avatar"
                 />
             </div>

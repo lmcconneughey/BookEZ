@@ -1,15 +1,32 @@
 'use client'
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import NavLinks from "./NavLinks"
 import Logo from "../sidebar/Logo"
 import Image from "next/image"
 import { doLogout } from "../../actions/index"
 import SideBarUserInfo from "./SideBarUserInfo"
+// import { auth } from "../../../auth"
 import {ArrowLeftEndOnRectangleIcon, ArrowRightStartOnRectangleIcon} from '@heroicons/react/24/solid'
 
 const Sidebar = () => {
+    // use useEffect to fetch session data and pass it to sidebaruserinfo as a prop
     const [isHover, setIsHovered] = useState(false)
+    // const [session, setSession] = useState(null);
+    // const userData = useEffect(() => {
+    //     async function fetchSession() {
+    //         try {
+    //           const sessionData = await auth();
+    //           setSession(sessionData);
+    //         } catch (err) {
+    //           setError(err);
+    //         } finally {
+    //           setLoading(false);
+    //         }
+    //       }
+      
+    //       fetchSession();
+    // }, [])
     const handleMouseEnter = () => {
         setIsHovered(true);
       };

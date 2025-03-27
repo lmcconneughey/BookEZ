@@ -25,7 +25,7 @@ const BookDetailsPage = async ({params: {id}}) => {
                 <div>
                     <ul className="mt-1.5 text-xs text-gray-700">
                         <li className="text-sm font-semibold text-slate-500 uppercase">Author: {book.author}</li>
-                        <li className="text-base text-slate-600 mt-4 font-light ">Description: {book.description}</li>
+                        <li className="text-base text-slate-600 mt-4 font-light">Description: {book.description}</li>
                         <li className="text-sm font-semibold text-slate-500 uppercase">Genre: {book.genre}</li>
                         <li className="text-sm font-semibold text-slate-500 uppercase">Pages: {book.pages}</li>
                         <li className="text-center text-sm text-red-400">Stock: {book.stock}</li>
