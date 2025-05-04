@@ -1,3 +1,4 @@
+
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
@@ -18,4 +19,20 @@ model User {
   email String
   password String
   name String
+}
+
+model Book {
+  id Int @id @default(autoincrement())
+  title String 
+  description String
+  author String
+  cover String
+  genre String
+  pages Int
+  isRented Boolean
+  stock Int
+  rentPrice Int
+  sellPrice Int
+  sold Int
+  ISBN String
 }

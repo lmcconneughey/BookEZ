@@ -1,4 +1,4 @@
-import avImage from "../../../../public/home/146206666.png"
+import avImage from "../../../../public/home/gRnAude0_400x400.png"
 import Image from "next/image"
 
 

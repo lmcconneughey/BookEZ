@@ -3,7 +3,7 @@ import GitHub from "next-auth/providers/github"
 import Google from "next-auth/providers/google"
 
 import CredentialsProvider from "next-auth/providers/credentials"
-import { User } from "./models/user-model";
+import {PrismaClient} from "@prisma/client"
 import bcrypt from "bcryptjs"
 //authenticate using register data/mongoDB
 
@@ -23,9 +23,11 @@ export const {
                 if (credentials === null) return null;
 
                 try {
-                    const user = await User.findOne({
-                        email: credentials?.email//<< if email: match credentials.email => user is found
-                    })
+                    const user = await prisma.user.findUnique({
+                        where: {
+                          email: req.params.email
+                        }
+                      })
                     
                     if(user) {
                         const isMatch = await bcrypt.compare(
